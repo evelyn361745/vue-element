@@ -1,7 +1,9 @@
 <template>
     <div id="home">
-        <head-top>
-            <span slot="left" class="head_logo">elm</span>
+        <head-top 
+            leftTitle="ele.me" 
+        >
+            <div slot="right" @click="goLogin">登录|注册</div>
         </head-top>
         <nav class="city_nav">
             <div class="city_tip">
@@ -94,6 +96,14 @@ export default {
             ajax_groupcity_list().then(result => {
                // console.log(result)
                 this.groupcity = result.data;
+            })
+        },
+        goLogin() {
+            this.$router.push({
+                path: '/login',
+                query: {
+                    
+                }
             })
         }
     }

@@ -1,15 +1,39 @@
 <template>
     <div id="head_top">
-        <mt-header fixed>
-            <slot name="logo"></slot>
-            <slot name="search"></slot>
-            <div class="head_goback" v-if="goback" @click="$router.go(-1)">
-                
-            </div>
-            <mt-button slot="right" class="head_login">登录|注册</mt-button>
-        </mt-header>
+        <van-nav-bar
+            :title="headTitle"
+            fixed
+            :left-text="leftTitle"
+            :right-text="rightTitle"
+            @click-left="onClickLeft"
+            @click-right="onClickRight">
+            <van-icon name="search" slot="right" v-if="search"></van-icon>
+            <slot slot="left" name="left"></slot>
+            <slot slot="title" name="title"></slot>
+            <slot slot="right" name="right"></slot>
+        </van-nav-bar>
     </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+
+        }
+    },
+    props: ['leftarrow', 'headTitle', 'rightTitle', 'leftTitle', 'search'],
+    methods: {
+        onClickLeft() {
+
+        },
+        onClickRight() {
+
+        }
+    }
+}
+</script>
+
 <style lang="scss" scoped>
 #head_top {
     background-color: #3190e8;
@@ -19,24 +43,23 @@
     top: 0;
     width: 100%;
     height: 1.95rem;
-    .head_logo {
-        left: 0.4rem;
-        font-weight: 400;
-        font-size: 0.7rem;
+    color: #fff;
+    .van-nav-bar {
+        background-color: #3190e8;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
         color: #fff;
-        width: 2.3rem;
-        height: 0.7rem;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
+        .van-nav-bar__text {
+            color: #fff;
+        }
+        .van-icon {
+            color: #fff;
+        }
+        .van-nav-bar__title {
+            color: #fff;
+        }
     }
-    .head_login {
-        right: 0.55rem;
-        font-size: 0.65rem;
-        color: #fff;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-    }
+    
 }
 </style>

@@ -1,6 +1,12 @@
 <template>
     <div id="login">
-        <head-top></head-top>
+        <head-top
+            headTitle="密码登录">
+            <slot slot="left" >
+                <van-icon name="arrow-left" @click="goHome"></van-icon>
+                <span @click="goHome">返回</span>
+            </slot>
+        </head-top>
         <form class="loginForm">
             <div class="input_container">
                 <input type="text" placeholder="账号" v-model="userAccount">
@@ -35,6 +41,16 @@ export default {
     },
     components: {
         headTop
+    },
+    methods: {
+        goHome() {
+            this.$router.push({
+                path: '/home',
+                query: {
+                    
+                }
+            })
+        }
     }
 }
 </script>

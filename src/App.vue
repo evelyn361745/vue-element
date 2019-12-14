@@ -21,7 +21,6 @@ aside, article, ul, dl, dt, dd, li, a, p, h1, h2,
   font-style: normal;
   text-decoration: none;
   border: none;
-  color: #333;
   font-weight: normal;
   font-family: "Microsoft Yahei";
   box-sizing: border-box;
