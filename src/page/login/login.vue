@@ -7,17 +7,31 @@
                 <span @click="goHome">返回</span>
             </slot>
         </head-top>
-        <form class="loginForm">
-            <div class="input_container">
-                <input type="text" placeholder="账号" v-model="userAccount">
-            </div>
-            <div class="input_container">
-                <input type="password" placeholder="密码" v-model="passWord">
-            </div>
-            <div class="input_container">
-                <input type="text" placeholder="验证码" maxlength="4" v-model="codeNumber">
-            </div>
-        </form>
+        <van-cell-group>
+            <van-field
+                v-model="userAccount"
+                clearable
+                class="input_container"
+                placeholder="账号"
+            ></van-field>
+            <van-field
+                :type="mytype"
+                clearable
+                placeholder="密码"
+                class="input_container"
+            >
+                <van-switch slot="button" v-model="passwd_checked"></van-switch>
+            </van-field>
+            <van-field
+                v-model="codeNumber"
+                clearable
+                placeholder="验证码"
+                class="input_container"
+                maxlength="4"
+            >
+                <van-image slot="button" src="" width="100px" height="45px"></van-image>
+            </van-field>
+        </van-cell-group>
         <p class="login_tips">
             温馨提示：未注册过的账号，登录时将自动注册
         </p>
@@ -35,12 +49,18 @@ export default {
     data() {
         return {
             userAccount: '',
-            passWord: '',
             codeNumber: '',
+            passwd_checked: true,
+            passWord: '',
         }
     },
     components: {
         headTop
+    },
+    computed:{
+        mytype: function() {
+            return this.passwd_checked?'password':''
+        }
     },
     methods: {
         goHome() {
@@ -57,9 +77,8 @@ export default {
 
 <style lang="scss" scoped>
 #login {
-    .loginForm {
-        padding-top: 2.35rem;
-        background-color: #fff;
+    .van-cell-group {
+        padding-top: 3.35rem;
     }
     .input_container {
         display: flex;

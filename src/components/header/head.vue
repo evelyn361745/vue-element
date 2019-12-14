@@ -46,8 +46,8 @@ export default {
     color: #fff;
     .van-nav-bar {
         background-color: #3190e8;
-        height: 30px;
-        line-height: 30px;
+        height: 46px;
+        line-height: 46px;
         text-align: center;
         color: #fff;
         .van-nav-bar__text {

@@ -102,7 +102,7 @@ export default {
             this.$router.push({
                 path: '/login',
                 query: {
-                    
+
                 }
             })
         }
@@ -113,7 +113,7 @@ export default {
 <style lang="scss" scoped>
 #home {
     .city_nav {
-        padding-top: 2.35rem;
+        padding-top: 3.35rem;
         border-top: 1px solid #e4e4e4;
         background-color: #fff;
         margin-bottom: 0.4rem;
