@@ -2,10 +2,10 @@
     <div id="login">
         <head-top
             headTitle="密码登录">
-            <slot slot="left" >
+            <div slot="left" >
                 <van-icon name="arrow-left" @click="goHome"></van-icon>
                 <span @click="goHome">返回</span>
-            </slot>
+            </div>
         </head-top>
         <van-cell-group>
             <van-field
