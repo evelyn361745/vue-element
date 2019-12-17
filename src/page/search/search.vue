@@ -1,5 +1,7 @@
 <template>
-    
+    <div id="search">
+        这是search
+    </div>
 </template>
 
 <script>
